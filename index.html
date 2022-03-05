@@ -1,17 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasteleria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .vh-90 {
+            height: 100%;
+            min-height: 100vh;
+        }
+
+        .blue-text {
+            color: #5D69BA;
+        }
+
+        .pink-text {
+            color: #FD6895;
+        }
+
+        .pastelcolor {
+            background-color: #FFF7E5;
+        }
+
+
+        .banner-text {
+            font-size: 5.5rem;
+        }
+
+        .banner-subtext {
+            font-size: 3.5rem;
+        }
+
+     
+  
+
+        .header {
+            min-height: 5vh;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+            background-image: url('img/top-banner.svg');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+
+        .btn-banner {
+            width: 14em;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background-color: transparent;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: flex;
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper {
+            height: auto;
+            padding-bottom: 40px;
+        }
+    </style>
+    <style>
+        .menu-bar {
+            border-radius: 25px;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+            display: inline-flex;
+            background-color: #47023f;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            padding: 0 10px;
+            margin: 50px 0 0 0;
+        }
+
+        .menu-bar li {
+            list-style: none;
+            color: white;
+            font-family: sans-serif;
+            font-weight: bold;
+            padding: 12px 16px;
+            margin: 0 8px;
+            position: relative;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .menu-bar li::before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            transition: 0.2s;
+            border-radius: 25px;
+        }
+
+        .menu-bar li:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .menu-bar li:hover::before {
+            background: #ff5e6c;
+            box-shadow: 0px 3px 20px 0px black;
+            transform: scale(1.2);
+        }
+        .menu-bar li:hover a {
+            color: #fff;
+        }
+        .menu-bar li a{
+            color: #ff5e6c;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
-<body>
-    <section>
-        <p>Taste our flavors</p>
-        <h2>Baked</h2>
-        <h2>with love!</h2>
-        <p>At pastelPalette</p>
+
+<body class="pastelcolor">
+    <div class=" header  d-flex justify-content-center mb-4 ">
+        <header class="">
+            <ul class="menu-bar">
+                <li><a href="#" class="px-2 mx-1">Home</a> </li>
+                <li><a href="#pasteles" class=" px-2  mx-1">Features</a> </li>
+                <li><a href="#pasteles" class=" px-2  mx-1">Features</a> </li>
+            </ul>
+        </header>
+    </div>
+    <section class="  vh-90 d-flex justify-content-center pastelcolor pt-10vh  ">
+
+        <div class="m-0  text-center d-flex justify-content-center">
+            <img src="img/cake.svg" alt="logo" class="w-100">
+        </div>
+        <div class="m-0  text-center d-flex flex-column justify-content-center">
+            <p class="blue-text banner-subtext">Taste our flavors</p>
+            <h2 class="pink-text banner-text">Baked</h2>
+            <h2 class="pink-text banner-text">with love!</h2>
+            <p class="blue-text banner-subtext">At pastelPalette</p>
+            <a href="#pasteles" class="justify-self-center mx-auto btn-banner"> Diseña tu pastel</a>
+        </div>
     </section>
+    <section class="vh-90 d-flex justify-content-center pastelcolor pt-10vh  " id="pasteles">
+<!-- Horizontal Steppers -->
+  
+      <!-- Stepers Wrapper -->
+      <ul class="stepper stepper-horizontal d-flex ">
+  
+        <!-- First Step -->
+        <li class="completed">
+          <a href="#!">
+            <span class="circle">1</span>
+            <span class="label">First step</span>
+          </a>
+        </li>
+  
+        <!-- Second Step -->
+        <li class="active">
+          <a href="#!">
+            <span class="circle">2</span>
+            <span class="label">Second step</span>
+          </a>
+        </li>
+  
+        <!-- Third Step -->
+        <li class="warning">
+          <a href="#!">
+            <span class="circle"><i class="fas fa-exclamation"></i></span>
+            <span class="label">Third step</span>
+          </a>
+        </li>
+  
+      </ul>
+      <!-- /.Stepers Wrapper -->
+    </section>
+    <section class="container pasteles my-0 pt-0 pb-4 d-flex flex-wrap " >
+        <!-- Slider main container -->
+        <div class="container " style="background-color: none;">
+            <div #swiperRef="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-6">
+                                <img class="card-img-top" src="./img/pasteles/chocolate.svg" alt="Card image cap">
+                            </div>
+                            <div class="col-6 d-flex flex-column align-items-start">
+
+                                <h1 class="text-start">
+                                    Avellana
+                                </h1>
+                                <h1 class="text-start">Crunch</h1>
+                                <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                    Laboriosam ullam iusto
+                                    incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
+                                    eveniet illo fugit nesciunt, fuga quaerat rem aliquam architecto. Iusto!</p>
+                                <button class="w-50 btn  btn-outline-primary mb-3 ">
+                                    I want this!
+                                </button>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Forma</th>
+                                            <th>Medidas</th>
+                                            <th>Personas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-6">
+                                <img class="card-img-top" src="./img/pasteles/chocolate.svg" alt="Card image cap">
+                            </div>
+                            <div class="col-6 d-flex flex-column align-items-start">
+
+                                <h1 class="text-start">
+                                    Avellana
+                                </h1>
+                                <h1 class="text-start">Crunch</h1>
+                                <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                    Laboriosam ullam iusto
+                                    incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
+                                    eveniet illo fugit nesciunt, fuga quaerat rem aliquam architecto. Iusto!</p>
+                                <button class="w-50 btn  btn-outline-primary mb-3 ">
+                                    I want this!
+                                </button>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Forma</th>
+                                            <th>Medidas</th>
+                                            <th>Personas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-6">
+                                <img class="card-img-top" src="./img/pasteles/chocolate.svg" alt="Card image cap">
+                            </div>
+                            <div class="col-6 d-flex flex-column align-items-start">
+
+                                <h1 class="text-start">
+                                    Avellana
+                                </h1>
+                                <h1 class="text-start">Crunch</h1>
+                                <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                    Laboriosam ullam iusto
+                                    incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
+                                    eveniet illo fugit nesciunt, fuga quaerat rem aliquam architecto. Iusto!</p>
+                                <button class="w-50 btn  btn-outline-primary mb-3 ">
+                                    I want this!
+                                </button>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Forma</th>
+                                            <th>Medidas</th>
+                                            <th>Personas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="col-6">
+                                <img class="card-img-top" src="./img/pasteles/chocolate.svg" alt="Card image cap">
+                            </div>
+                            <div class="col-6 d-flex flex-column align-items-start">
+
+                                <h1 class="text-start">
+                                    Avellana
+                                </h1>
+                                <h1 class="text-start">Crunch</h1>
+                                <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                    Laboriosam ullam iusto
+                                    incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
+                                    eveniet illo fugit nesciunt, fuga quaerat rem aliquam architecto. Iusto!</p>
+                                <button class="w-50 btn  btn-outline-primary mb-3 ">
+                                    I want this!
+                                </button>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Forma</th>
+                                            <th>Medidas</th>
+                                            <th>Personas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Barra</td>
+                                            <td>12 x 30</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Redonda pequeña</td>
+                                            <td>22 (diametro)</td>
+                                            <td>20</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="w-50 text-center x d-flex justify-content-center flex-column" style="background-color: none;">
+            <h2>Taste our favourite choices</h2>
+            <h3>or</h3>
+            <a class="justify-self-center mx-auto btn-banner">Create yours!</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 5000,
+            }, loop: true,
+            slidesPerView: 1,
+            stopOnLastSlide: false,
+            autoHeight: true,
+            centeredSlides: true,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "bullets",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+
+    </script>
 </body>
+
 </html>
