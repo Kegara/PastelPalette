@@ -21,7 +21,10 @@
         .pink-text {
             color: #FD6895;
         }
-
+        .red-text{
+            color: #e8473f;
+            font-size: 3.5em;
+        }
         .pastelcolor {
             background-color: #FFF7E5;
         }
@@ -35,8 +38,8 @@
             font-size: 3.5rem;
         }
 
-     
-  
+
+
 
         .header {
             min-height: 5vh;
@@ -108,7 +111,8 @@
 
         .menu-bar li {
             list-style: none;
-            color: white;
+            color: #ff5e6c;
+            text-decoration: none;
             font-family: sans-serif;
             font-weight: bold;
             padding: 12px 16px;
@@ -131,7 +135,7 @@
         }
 
         .menu-bar li:hover {
-            color: black;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -140,29 +144,99 @@
             box-shadow: 0px 3px 20px 0px black;
             transform: scale(1.2);
         }
-        .menu-bar li:hover a {
-            color: #fff;
-        }
-        .menu-bar li a{
-            color: #ff5e6c;
+
+        .menu-bar a {
             text-decoration: none;
         }
+    </style>
+    <style>
+        .spacer {
+            height: 15vh !important;
+        }
 
+        .contact-icon {
+            border-radius: 50%;
+            margin-right: 1em;
+        }
+
+        .contact-container .contact-icon:hover svg {
+            color: #FFF7E5;
+        }
+
+        .contact-icon svg {
+            padding: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ff5e6c;
+        }
+    </style>
+    <style>
+    .stepper .stepper-tabs {
+    content: '';
+    list-style-type: none;
+    }
+    .stepper .stepper-tabs > button {
+    background: #34bc9b;
+        color: #fff;
+        border-radius: 50%;
+        width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    border: none;
+    padding: 0;
+    color: #f1f1f1;
+    }
+    .stepper .stepper-tabs >  .completed {
+    content: ' ✔ ';
+    }
+    .stepper .stepper-tabs .disabled {
+        opacity: 0.5;
+    }
+    </style>
+    <style>
+        .card .decoration{
+            display: none;
+        }
+        .card .decoration:checked  + label{
+            border: 5px solid #5D69BA;
+        }
+        /* Centered text */
+        .centered-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #050505dc;    
+        color: #fff;
+        font-size: 3.5em;
+        }
     </style>
 </head>
 
 <body class="pastelcolor">
+     <!-- ======= header Section ======= -->
     <div class=" header  d-flex justify-content-center mb-4 ">
         <header class="">
             <ul class="menu-bar">
-                <li><a href="#" class="px-2 mx-1">Home</a> </li>
-                <li><a href="#pasteles" class=" px-2  mx-1">Features</a> </li>
-                <li><a href="#pasteles" class=" px-2  mx-1">Features</a> </li>
+                <a href="index.html#index" class="px-2 mx-1">
+                    <li>Home</li>
+                </a>
+                <a href="index.html#stepper-cake" class=" px-2  mx-1">
+                    <li>Stepper-cake </li>
+                </a>
+                <a href="index.html#stock-cakes" class=" px-2  mx-1">
+                    <li>Stock-cake</li>
+                </a>
+                <a href="index.html#contact" class=" px-2  mx-1">
+                    <li>Contact </li>
+                </a>
             </ul>
         </header>
     </div>
-    <section class="  vh-90 d-flex justify-content-center pastelcolor pt-10vh  ">
-
+     <!-- ======= header Section ======= -->
+    <!-- ======= Banner Section ======= -->
+    <section id="index" class=" vh-90 d-flex justify-content-center pastelcolor pt-10vh  ">
         <div class="m-0  text-center d-flex justify-content-center">
             <img src="img/cake.svg" alt="logo" class="w-100">
         </div>
@@ -172,42 +246,243 @@
             <h2 class="pink-text banner-text">with love!</h2>
             <p class="blue-text banner-subtext">At pastelPalette</p>
             <a href="#pasteles" class="justify-self-center mx-auto btn-banner"> Diseña tu pastel</a>
+            
+            <a href="#pasteles" class="justify-self-center mx-auto btn-banner"> |</a>
+            
+            <a href="#pasteles" class="justify-self-center mx-auto btn-banner"> |</a>
+            
+            <a href="#pasteles" class="justify-self-center mx-auto btn-banner"> v</a>
         </div>
     </section>
-    <section class="vh-90 d-flex justify-content-center pastelcolor pt-10vh  " id="pasteles">
-<!-- Horizontal Steppers -->
-  
-      <!-- Stepers Wrapper -->
-      <ul class="stepper stepper-horizontal d-flex ">
-  
-        <!-- First Step -->
-        <li class="completed">
-          <a href="#!">
-            <span class="circle">1</span>
-            <span class="label">First step</span>
-          </a>
-        </li>
-  
-        <!-- Second Step -->
-        <li class="active">
-          <a href="#!">
-            <span class="circle">2</span>
-            <span class="label">Second step</span>
-          </a>
-        </li>
-  
-        <!-- Third Step -->
-        <li class="warning">
-          <a href="#!">
-            <span class="circle"><i class="fas fa-exclamation"></i></span>
-            <span class="label">Third step</span>
-          </a>
-        </li>
-  
-      </ul>
-      <!-- /.Stepers Wrapper -->
+    <!-- ======= End Banner Section ======= -->
+    <div class="spacer" id="stepper-cake"></div>
+    <!-- ======= Stepper-cake Section ======= -->
+    <section class="container justify-content-center pastelcolor pt-10vh  ">
+        <!-- Horizontal Steppers -->
+
+        <!-- Stepers Wrapper -->
+        <ul class="stepper stepper-horizontal d-flex justify-content-between">
+            <!-- First Step -->
+            <li class="stepper-tabs">
+               <button id="" class="completed"  title="Step 1" onclick="showStep(0,this)">1</button>
+            </li>
+            <!-- Second Step -->
+            <li class="stepper-tabs">
+                <button id="" class="disabled"  title="Step 2" onclick="showStep(1,this)">2</button>
+            </li>
+            <!-- Third Step -->
+            <li class="stepper-tabs">
+                <button id="" class="disabled"  title="Step 3" onclick="showStep(2)">3</button>
+            </li>
+        </ul>
+        <!-- /.Stepers Wrapper -->
+        <div class="step">
+            <h2 class="text-center">Step 1</h2>
+            <p class="text-center">Choose your flavor</p>
+            <div class="row  justify-content-center">
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration" id="flavor">
+                        <label for="flavor" class="text-center d-flex">
+                            <div class="centered-img">$500</div>
+                            <img class="card-img-top" src="./img/pasteles/chocolate.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration" id="flavor2">
+                        <label for="flavor2"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/pasteles/sanvalentin.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration" id="flavor3">
+                        <label for="flavor3"><div class="centered-img">$500</div>
+                            <img class="card-img-top" src="./img/pasteles/vainilla.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration" id="flavor4">
+                        <label for="flavor4"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/pasteles/carrot.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration"  id="flavor5">
+                        <label for="flavor5"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/pasteles/cherry.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration"   id="flavor6">
+                        <label for="flavor6"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/pasteles/off_50.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="step d-none">
+            <h2 class="text-center">Step 2</h2>
+            <p class="text-center">Choose your topping</p>
+            <div class="row text-center  justify-content-center">
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration"   id="topping1">
+                        <label for="topping1"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/decoraciones/pastel_decoration.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration"   id="topping2">
+                        <label for="topping2"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/decoraciones/pastel_decoration1.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones" class="decoration"    id="topping3">
+                        <label for="topping3"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/decoraciones/pastel_decoration2.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <div class="card">
+                        <input type="checkbox" name="decoraciones"  class="decoration"   id="topping4">
+                        <label for="topping4"><div class="centered-img">$500</div>
+                        <img class="card-img-top" src="./img/decoraciones/pastel_decoration3.svg" alt="Card image cap">
+                        </label>
+                    </div>
+                </div>
+            
+
+            </div>
+        </div>
+        <div class="step d-none">
+            <h2 class="text-center">Step 3</h2>
+            <p class="text-center">Contact us</p>
+            <!-- ======= Contact Section ======= -->
+            <section class="  contact">
+                <div class="container">
+
+                    <div class="section-title">
+                        <h2>Contact</h2>
+                        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
+                            Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit
+                            alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    </div>
+
+                    <div class="row justify-content-around my-5" data-aos="fade-in">
+
+                        <div class="col-lg-5 d-flex flex-column align-items-stretch card p-4 ">
+                            <div class="contact-container d-flex mb-2  ">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto"
+                                        fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>
+                                </div>
+                                <div class="contact-text  ml-3">
+                                    <h4 class="m-0">Location:</h4>
+                                    <p class="m-0">A108 Adam Street, New York, NY 535022</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-container d-flex mb-2 ">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto"
+                                        fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4 class="m-0">Email:</h4>
+                                    <p class="m-0">info@example.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-container d-flex mb-2">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto"
+                                        fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <h4 class="m-0">Call:</h4>
+                                    <p class="m-0">+1 5589 55488 55s</p>
+                                </div>
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                                frameborder="0" style="border:0; width: 100%; height:100%;" allowfullscreen></iframe>
+
+                        </div>
+                        <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch card p-4">
+                            <form role="form" class="php-email-form">
+                                <div class="row">
+                                    <label>Datos</label>
+                                    <div class="form-floating col-md-6 mb-2">
+                                        <input type="text" name="name" class="form-control" id="name"
+                                            placeholder="name@example.com" required>
+                                        <label for="name">Nombre</label>
+                                    </div>
+                                    <div class="form-floating col-md-6 mb-2">
+                                        <input type="email" name="email" id="email" class="form-control" id="name"
+                                            placeholder="name@example.com" required>
+                                        <label for="name">Correo</label>
+                                    </div>
+
+                                </div>
+                                <label>Correo</label>
+                                <div class="form-floating col-12 mb-2">
+                                    <input type="email" name="email" id="email" class="form-control" id="name"
+                                        placeholder="name@example.com" required>
+                                    <label for="name">Correo</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Message</label>
+                                    <textarea class="form-control" name="message" rows="10" required></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                                </div>
+                                <div class="text-center"><button type="submit" class="btn btn-outline-primary">Send
+                                        Message</button></div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Contact Section -->
+        </div>
     </section>
-    <section class="container pasteles my-0 pt-0 pb-4 d-flex flex-wrap " >
+    <!-- ======= End Stepper-cake Section ======= -->
+    <div class="spacer" id="stock-cakes"></div>
+    <!-- ======= End Stock-cakes Section ======= -->
+    <section class=" container pasteles my-0 pt-0 pb-4 d-flex flex-wrap ">
         <!-- Slider main container -->
         <div class="container " style="background-color: none;">
             <div #swiperRef="" class="swiper mySwiper">
@@ -222,7 +497,7 @@
                                 <h1 class="text-start">
                                     Avellana
                                 </h1>
-                                <h1 class="text-start">Crunch</h1>
+                                <h1 class="text-start red-text">Crunch</h1>
                                 <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                     Laboriosam ullam iusto
                                     incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
@@ -276,7 +551,7 @@
                                 <h1 class="text-start">
                                     Avellana
                                 </h1>
-                                <h1 class="text-start">Crunch</h1>
+                                <h1 class="text-start red-text">Crunch</h1>
                                 <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                     Laboriosam ullam iusto
                                     incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
@@ -330,7 +605,7 @@
                                 <h1 class="text-start">
                                     Avellana
                                 </h1>
-                                <h1 class="text-start">Crunch</h1>
+                                <h1 class="text-start red-text">Crunch</h1>
                                 <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                     Laboriosam ullam iusto
                                     incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
@@ -384,7 +659,7 @@
                                 <h1 class="text-start">
                                     Avellana
                                 </h1>
-                                <h1 class="text-start">Crunch</h1>
+                                <h1 class="text-start red-text">Crunch</h1>
                                 <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                     Laboriosam ullam iusto
                                     incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium
@@ -434,13 +709,121 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="w-50 text-center x d-flex justify-content-center flex-column" style="background-color: none;">
-            <h2>Taste our favourite choices</h2>
-            <h3>or</h3>
-            <a class="justify-self-center mx-auto btn-banner">Create yours!</a>
+    </section>
+    <!-- ======= End Stock-cakes Section ======= -->
+    <div class="spacer" id="contact"></div>
+    <!-- ======= Contact Section ======= -->
+    <section class="  contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contact</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
+                    Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit
+                    alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row justify-content-around my-5" data-aos="fade-in">
+
+                <div class="col-lg-5 d-flex flex-column align-items-stretch card p-4 ">
+                    <div class="contact-container d-flex mb-2  ">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="currentColor"
+                                class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>
+                        </div>
+                        <div class="contact-text  ml-3">
+                            <h4 class="m-0">Location:</h4>
+                            <p class="m-0">A108 Adam Street, New York, NY 535022</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-container d-flex mb-2 ">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="currentColor"
+                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4 class="m-0">Email:</h4>
+                            <p class="m-0">info@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-container d-flex mb-2">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="currentColor"
+                                class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4 class="m-0">Call:</h4>
+                            <p class="m-0">+1 5589 55488 55s</p>
+                        </div>
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0" style="border:0; width: 100%; height:100%;" allowfullscreen></iframe>
+
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch card p-4">
+                    <form role="form" class="php-email-form">
+                        <div class="row">
+                            <label>Datos</label>
+                            <div class="form-floating col-md-6 mb-2">
+                                <input type="text" name="name" class="form-control" id="name"
+                                    placeholder="name@example.com" required>
+                                <label for="name">Nombre</label>
+                            </div>
+                            <div class="form-floating col-md-6 mb-2">
+                                <input type="email" name="email" id="email" class="form-control" id="name"
+                                    placeholder="name@example.com" required>
+                                <label for="name">Correo</label>
+                            </div>
+
+                        </div>
+                        <label>Correo</label>
+                        <div class="form-floating col-12 mb-2">
+                            <input type="email" name="email" id="email" class="form-control" id="name"
+                                placeholder="name@example.com" required>
+                            <label for="name">Correo</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Message</label>
+                            <textarea class="form-control" name="message" rows="10" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit" class="btn btn-outline-primary">Send
+                                Message</button></div>
+                    </form>
+                </div>
+
+            </div>
+
         </div>
     </section>
-
+    <!-- End Contact Section -->
+    <!--footer Section-->
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-dark" href="">Kevin Garcia</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- End footer Section -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -462,6 +845,20 @@
             },
         });
 
+
+    </script>
+    <script>
+      function showStep(n) {
+        // This function will display the specified "n" step.
+        var x = document.getElementsByClassName("step");
+        Array.from(x).forEach(element => {
+            element.classList.add('d-none')
+        });
+        x[n].classList.remove('d-none');
+        console.log(event.currentTarget.parentElement)
+        event.currentTarget.classList.add('completed');
+        event.currentTarget.classList.remove('disabled');
+      }
 
     </script>
 </body>
