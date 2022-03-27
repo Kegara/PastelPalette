@@ -1,8 +1,15 @@
 <template>
   <!-- ======= Banner Section ======= -->
-  <section id="index" class="vh-90 d-flex justify-content-center pastelcolor pt-10vh">
+  <section 
+    id="index" 
+    class="vh-90 d-flex justify-content-center pastelcolor pt-10vh"
+  >
     <div class="m-0 text-center d-flex justify-content-center">
-      <img src="../../assets/img/cake.svg" alt="logo" class="w-100" />
+      <img 
+        src="@/assets/img/cake.svg" 
+        :alt="alt" 
+        class="w-100"
+      >
     </div>
     <div class="m-0 text-center d-flex flex-column justify-content-center">
       <p class="blue-text banner-subtext">Taste our flavors</p>
@@ -10,8 +17,7 @@
       <h2 class="pink-text banner-text">with love!</h2>
       <p class="blue-text banner-subtext">At pastelPalette</p>
       <a href="index.html#stepper-cake" class="justify-self-center mx-auto btn-banner">
-        Diseña tu pastel</a
-      >
+        Diseña tu pastel</a>
 
       <a href="index.html#stepper-cake" class="justify-self-center mx-auto btn-banner"> |</a>
 
@@ -25,19 +31,7 @@
 
 <script>
 export default {
-  name: 'Banner',
-  props: {
-    src: {
-      type: String,
-      required: true,
-      default: 'https://images.freeimages.com/images/large-previews/172/pastel-clouds-1311657.jpg',
-    },
-    alt: {
-      type: String,
-      required: true,
-      default: 'banner',
-    },
-  },
+  name: "Banner"
 };
 </script>
 
@@ -60,9 +54,7 @@ export default {
   font-size: 3.5em;
 }
 
-.pastelcolor {
-  background-color: #fff7e5;
-}
+
 
 .banner-text {
   font-size: 5.5rem;

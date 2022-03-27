@@ -1,33 +1,34 @@
 <template>
-  <banner-component></banner-component>
+  <page-header />
+  <banner-component />
+  <stepper-cake />
+  <stock-cakes />
+  <full-contact-form />
+  <page-footer />
 </template>
 <script>
-import BannerComponent from '@/components/LandingPage/Banners.vue';
+import BannerComponent from "@/components/LandingPage/Banners.vue";
+import PageHeader from '@/components/common/PageHeader.vue';
+import StepperCake from '@/components/LandingPage/StepperCake.vue';
+import PageFooter from '@/components/common/PageFooter.vue';
+import StockCakes from './LandingPage/StockCakes.vue';
+import FullContactForm from './contactForms/fullContactForm.vue';
 
 export default {
-  name: 'LandingPage',
-  props: {
-    msg: String,
-  },
+  name: "LandingPage",
   components: {
     BannerComponent,
+    PageHeader,
+    StepperCake,
+    PageFooter,
+    StockCakes,
+    FullContactForm,
   },
 };
 </script>
 
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style >
+.spacer {
+            min-height: 15vh !important;
+        }
 </style>

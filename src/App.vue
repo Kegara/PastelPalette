@@ -1,5 +1,5 @@
 <template>
-  <landing-page msg="Welcome to Your Vue.js App"/>
+  <landing-page />
 </template>
 
 <script>
@@ -20,6 +20,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #fff7e5;
+}
+.pastelcolor {
+  background-color: #fff7e5;
 }
 </style>
