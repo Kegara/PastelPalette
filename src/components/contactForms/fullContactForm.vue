@@ -12,7 +12,10 @@
         </p>
       </div>
 
-      <div class="row justify-content-around my-5" data-aos="fade-in">
+      <div
+        class="row justify-content-around my-5"
+        data-aos="fade-in"
+      >
         <div class="col-lg-5 d-flex flex-column align-items-stretch card p-4">
           <div class="contact-container d-flex mb-2">
             <div class="contact-icon">
@@ -30,8 +33,12 @@
               </svg>
             </div>
             <div class="contact-text ml-3">
-              <h4 class="m-0">Location:</h4>
-              <p class="m-0">A108 Adam Street, New York, NY 535022</p>
+              <h4 class="m-0">
+                Location:
+              </h4>
+              <p class="m-0">
+                A108 Adam Street, New York, NY 535022
+              </p>
             </div>
           </div>
 
@@ -51,8 +58,12 @@
               </svg>
             </div>
             <div class="contact-text">
-              <h4 class="m-0">opening times:</h4>
-              <p class="m-0">09:00-16:00 hr.</p>
+              <h4 class="m-0">
+                opening times:
+              </h4>
+              <p class="m-0">
+                09:00-16:00 hr.
+              </p>
             </div>
           </div>
           <div class="contact-container d-flex mb-2">
@@ -71,8 +82,12 @@
               </svg>
             </div>
             <div class="contact-text">
-              <h4 class="m-0">Call:</h4>
-              <p class="m-0">+1 5589 55488 55s</p>
+              <h4 class="m-0">
+                Call:
+              </h4>
+              <p class="m-0">
+                +1 5589 55488 55s
+              </p>
             </div>
           </div>
           <iframe
@@ -109,7 +124,7 @@
                   placeholder="name@example.com"
                   required
                 >
-                <label for="name" >Email</label>
+                <label for="name">Email</label>
               </div>
             </div>
             <label class="text-start d-flex">Email</label>

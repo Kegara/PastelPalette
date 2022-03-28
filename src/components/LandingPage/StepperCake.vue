@@ -1,8 +1,13 @@
 <template>
   <!-- ======= Stepper-cake Section ======= -->
-  <div id="stepper-cake" class="spacer" />
+  <div
+    id="stepper-cake"
+    class="spacer"
+  />
   <section class="container justify-content-center pastelcolor pt-10vh">
-    <h1 class="text-center red-text">Make your cake as you want!</h1>
+    <h1 class="text-center red-text">
+      Make your cake as you want!
+    </h1>
     <!-- Stepers Wrapper -->
     <ul class="stepper stepper-horizontal d-flex justify-content-between">
       <!-- First Step -->
@@ -13,8 +18,8 @@
             currentStep == 1 ? 'active' : 'disabled',
             currentStep > 1 ? 'completed' : '',
           ]"
-          @click="changeStep(1)"
           title="Step 1"
+          @click="changeStep(1)"
         >
           1
         </button>
@@ -27,8 +32,8 @@
             currentStep == 2 ? 'active' : 'disabled',
             currentStep > 2 ? 'completed' : '',
           ]"
-          @click="changeStep(2)"
           title="Step 2"
+          @click="changeStep(2)"
         >
           2
         </button>
@@ -41,8 +46,8 @@
             currentStep == 3 ? 'active' : 'disabled',
             currentStep > 3 ? 'completed' : '',
           ]"
-          @click="changeStep(3)"
           title="Step 3"
+          @click="changeStep(3)"
         >
           3
         </button>
@@ -50,59 +55,82 @@
     </ul>
     <!-- /.Stepers Wrapper -->
     <div :class="[currentStep != 1 ? 'd-none' : '', 'step']">
-      <h2 class="text-center">Step 1</h2>
-      <p class="text-center">Choose your flavor</p>
+      <h2 class="text-center">
+        Step 1
+      </h2>
+      <p class="text-center">
+        Choose your flavor
+      </p>
       <div class="row justify-content-center">
-        <div v-for="(cake, index) in cakes" :key="index" class="col-md-4 mb-2">
-          <div class="card" :title="cake.name">
+        <div
+          v-for="(cake, index) in cakes"
+          :key="index"
+          class="col-md-4 mb-2"
+        >
+          <div
+            class="card"
+            :title="cake.name"
+          >
             <input
               :id="'flavor' + index"
               type="checkbox"
               name="decoraciones"
               class="decoration"
-            />
-            <label :for="'flavor' + index" class="text-center d-flex">
+            >
+            <label
+              :for="'flavor' + index"
+              class="text-center d-flex"
+            >
               <div class="centered-img">{{ cakePrice(cake.price) }}</div>
               <img
                 class="card-img-top"
                 alt="Card image cap"
                 :src="cake.image"
-              />
+              >
             </label>
           </div>
         </div>
       </div>
     </div>
     <div :class="[currentStep != 2 ? 'd-none' : '', 'step']">
-      <h2 class="text-center">Step 2</h2>
-      <p class="text-center">Choose your topping</p>
+      <h2 class="text-center">
+        Step 2
+      </h2>
+      <p class="text-center">
+        Choose your topping
+      </p>
       <div class="row text-center justify-content-center">
         <div
           v-for="(topping, index) in toppings"
           :key="index"
           class="col-md-4 mb-2"
         >
-          <div class="card" :title="topping.name">
+          <div
+            class="card"
+            :title="topping.name"
+          >
             <input
               :id="'topping' + index"
               type="checkbox"
               name="decoraciones"
               class="decoration"
-            />
+            >
             <label :for="'topping' + index">
               <div class="centered-img">{{ cakePrice(topping.price) }}</div>
               <img
                 class="card-img-top"
                 alt="Card image cap"
                 :src="topping.image"
-              />
+              >
             </label>
           </div>
         </div>
       </div>
     </div>
     <div :class="[currentStep != 3 ? 'd-none' : '', 'step']">
-      <h2 class="text-center">Step 3</h2>
+      <h2 class="text-center">
+        Step 3
+      </h2>
       <full-contact-form />
     </div>
     <div
@@ -113,7 +141,7 @@
     >
       <button
         v-if="currentStep > 1"
-        class="btn-outline-primary"
+        class="btn btn-outline-primary rounded"
         :title="'Step' + (currentStep - 1)"
         @click="currentStep--"
       >
@@ -121,7 +149,7 @@
       </button>
       <button
         v-if="currentStep < 3"
-        class="btn-outline-primary"
+        class="btn btn-outline-primary rounded "
         :title="'Step' + (currentStep + 1)"
         @click="currentStep++"
       >

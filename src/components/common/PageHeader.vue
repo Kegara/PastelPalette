@@ -1,15 +1,19 @@
 <template>
   <div class="header d-flex justify-content-center mb-4 f">
-    <header class="">
+    <header 
+      id="nav" 
+      class=""
+    >
       <ul class="menu-bar">
-       
-        <a
-         v-for="(item,index) in items" 
+        <router-link
+          v-for="(item, index) in items"
           :key="index"
-          :href="item.url" class="px-2 mx-1"
+          :to="{name:item.link}"
+          :hash="item.hash"
+          class="px-2 mx-1"
         >
-          <li> {{ item.title }} </li>
-        </a>
+          <li>{{ item.title }}</li>
+        </router-link>
       </ul>
     </header>
   </div>
@@ -20,10 +24,11 @@ export default {
   name: "Pageheader",
   data() {
     return {
-    items: [{ title: 'Home',link: 'Foo' }, { title: 'Stepper-cake ',link: 'Foo' },
-    { title: 'stock-cakes',link: 'Foo' } , { title: 'Contact',link: 'Foo' }
-    , { title: 'Login',link: 'Foo' }]
-    }
+      items: [
+        { title: "Home", link: "Home" , hash: "#Home" },
+        { title: "Admin", link: "Admin", hash: "#Admin" },
+      ],
+    };
   },
   methods: {},
 };

@@ -12,18 +12,38 @@
       >
     </div>
     <div class="m-0 text-center d-flex flex-column justify-content-center">
-      <p class="blue-text banner-subtext">Taste our flavors</p>
-      <h2 class="pink-text banner-text">Baked</h2>
-      <h2 class="pink-text banner-text">with love!</h2>
-      <p class="blue-text banner-subtext">At pastelPalette</p>
-      <a href="index.html#stepper-cake" class="justify-self-center mx-auto btn-banner">
+      <p class="blue-text banner-subtext">
+        Taste our flavors
+      </p>
+      <h2 class="pink-text banner-text">
+        Baked
+      </h2>
+      <h2 class="pink-text banner-text">
+        with love!
+      </h2>
+      <p class="blue-text banner-subtext">
+        At pastelPalette
+      </p>
+      <a
+        href="index.html#stepper-cake"
+        class="justify-self-center mx-auto btn-banner"
+      >
         Diseña tu pastel</a>
 
-      <a href="index.html#stepper-cake" class="justify-self-center mx-auto btn-banner"> |</a>
+      <a
+        href="index.html#stepper-cake"
+        class="justify-self-center mx-auto btn-banner"
+      > |</a>
 
-      <a href="index.html#stepper-cake" class="justify-self-center mx-auto btn-banner"> |</a>
+      <a
+        href="index.html#stepper-cake"
+        class="justify-self-center mx-auto btn-banner"
+      > |</a>
 
-      <a href="index.html#stepper-cake" class="justify-self-center mx-auto btn-banner"> v</a>
+      <a
+        href="index.html#stepper-cake"
+        class="justify-self-center mx-auto btn-banner"
+      > v</a>
     </div>
   </section>
   <!-- ======= End Banner Section ======= -->

@@ -1,6 +1,9 @@
 <template>
   <!-- ======= End Stepper-cake Section ======= -->
-  <div class="spacer" id="stock-cakes"></div>
+  <div
+    id="stock-cakes"
+    class="spacer"
+  />
   <!-- ======= End Stock-cakes Section ======= -->
   <section
     class="
@@ -18,7 +21,10 @@
       Can't choose? Try a stock cake!
     </h1>
     <!-- Slider main container -->
-    <div class="container" style="background-color: none">
+    <div
+      class="container"
+      style="background-color: none"
+    >
       <swiper
         :slides-per-view="1"
         :space-between="30"
@@ -32,18 +38,32 @@
         }"
         class="swiper mySwiper"
       >
-        <swiper-slide v-for="(slide, index) in slides" :key="index">
+        <swiper-slide
+          v-for="(slide, index) in slides"
+          :key="index"
+        >
           <div class="row">
             <div class="col-6">
-              <img class="card-img-top" :src="slide.img" alt="Card image cap" />
+              <img
+                class="card-img-top"
+                :src="slide.img"
+                alt="Card image cap"
+              >
             </div>
             <div class="col-6 d-flex flex-column align-items-start">
-              <h1 class="text-start">{{ slide.title }}</h1>
-              <h1 class="text-start red-text">{{ slide.subtitle }}</h1>
+              <h1 class="text-start">
+                {{ slide.title }}
+              </h1>
+              <h1 class="text-start red-text">
+                {{ slide.subtitle }}
+              </h1>
               <p class="text-start">
                 {{ slide.description }}
               </p>
-              <a href="#contact" class="w-50 btn btn-outline-primary mb-3">
+              <a
+                href="#contact"
+                class="w-50 btn btn-outline-primary mb-3"
+              >
                 I want this!
               </a>
               <table class="table table-borderless">
@@ -55,7 +75,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(info, index2) in slide.table" :key="index2">
+                  <tr
+                    v-for="(info, index2) in slide.table"
+                    :key="index2"
+                  >
                     <td>{{ info.shape }}</td>
                     <td>{{ info.measures }}</td>
                     <td>{{ info.persons }}</td>
