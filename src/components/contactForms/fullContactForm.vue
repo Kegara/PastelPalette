@@ -33,10 +33,10 @@
               </svg>
             </div>
             <div class="contact-text ml-3">
-              <h4 class="m-0">
+              <h4 class="m-0 text-start">
                 Location:
               </h4>
-              <p class="m-0">
+              <p class="m-0 text-start">
                 A108 Adam Street, New York, NY 535022
               </p>
             </div>
@@ -59,9 +59,9 @@
             </div>
             <div class="contact-text">
               <h4 class="m-0">
-                opening times:
+                Opening times:
               </h4>
-              <p class="m-0">
+              <p class="m-0  text-start">
                 09:00-16:00 hr.
               </p>
             </div>
@@ -82,7 +82,7 @@
               </svg>
             </div>
             <div class="contact-text">
-              <h4 class="m-0">
+              <h4 class="m-0 text-start">
                 Call:
               </h4>
               <p class="m-0">
@@ -99,16 +99,16 @@
         </div>
         <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch card p-4">
           <form 
+            ref="form"
             role="form"
-            class="php-email-form"
+            lazy-validation
+            @submit.prevent="handleSubmit"
           >
             <div class="row">
-              <label class="text-start">Information</label>
+              <label class="text-start h4">Information</label>
               <div class="form-floating col-md-6 mb-2">
                 <input
-                  id="name"
-                  type="text"
-                  name="name"
+                  v-model="name"
                   class="form-control"
                   placeholder="name@example.com"
                   required
@@ -117,22 +117,17 @@
               </div>
               <div class="form-floating col-md-6 mb-2">
                 <input
-                  id="email"
-                  type="email"
-                  name="email"
+                  v-model="phone"
                   class="form-control"
                   placeholder="name@example.com"
                   required
                 >
-                <label for="name">Email</label>
+                <label for="name">Phone</label>
               </div>
             </div>
-            <label class="text-start d-flex">Email</label>
             <div class="form-floating col-12 mb-2">
               <input
-                id="email"
-                type="email"
-                name="email"
+                v-model="email"
                 class="form-control"
                 placeholder="name@example.com"
                 required
@@ -145,6 +140,7 @@
                 class="text-start d-flex justify-self-start"
               >Message</label>
               <textarea
+                v-model="message"
                 class="form-control"
                 name="message"
                 rows="10"
@@ -156,6 +152,7 @@
               <button
                 type="submit"
                 class="btn btn-outline-primary"
+                @click="SendEmail"
               >
                 Send Message
               </button>
@@ -169,7 +166,43 @@
 </template>
 
 <script>
-export default {};
+export default {
+    props:{
+        propfunction: Function
+    },
+    data() {
+        return {
+          name: "kevin",
+          email: "mr.kegara@gmail.com",
+          phone: "081212121212",
+          message: "Hi there, I'm interested in your product",
+        }
+    },
+    methods: {
+       handleSubmit() {
+          this. sendEmail()
+    },
+      sendEmail() {
+        console.log(this.name, this.email, this.phone, this.message);
+        console.log(this.$store.getters.getclients);
+        this.$store.dispatch('addClient', {
+          id: this.$store.getters.getclients.length + 1,
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          message: this.message,
+        });
+        this.propfunction(this.$store.getters.getclients.length, this.name,this.message);
+        //this.clearForm();
+      },
+      clearForm() {
+        this.name = "";
+        this.email = "";
+        this.phone = "";
+        this.message = "";
+      },
+    }
+}
 </script>
 
 <style scoped>

@@ -63,8 +63,8 @@
       </p>
       <div class="row justify-content-center">
         <div
-          v-for="(cake, index) in cakes"
-          :key="index"
+          v-for="(cake, id) in cakes"
+          :key="id"
           class="col-md-4 mb-2"
         >
           <div
@@ -72,13 +72,14 @@
             :title="cake.name"
           >
             <input
-              :id="'flavor' + index"
+              :id="'flavor' + id"
               type="checkbox"
               name="decoraciones"
               class="decoration"
+              @click="addFlavor(cake)"
             >
             <label
-              :for="'flavor' + index"
+              :for="'flavor' + id"
               class="text-center d-flex"
             >
               <div class="centered-img">{{ cakePrice(cake.price) }}</div>
@@ -114,6 +115,7 @@
               type="checkbox"
               name="decoraciones"
               class="decoration"
+              @click="addTopping(topping)"
             >
             <label :for="'topping' + index">
               <div class="centered-img">{{ cakePrice(topping.price) }}</div>
@@ -131,7 +133,10 @@
       <h2 class="text-center">
         Step 3
       </h2>
-      <full-contact-form />
+      <full-contact-form :propfunction="sampleFunction" />
+    </div>
+    <div>
+      Total: {{ cakePrice(price) }}
     </div>
     <div
       :class="[
@@ -166,74 +171,20 @@ export default {
   components: { fullContactForm },
   data() {
     return {
+      selectedFlavors: [],
+      selectedToppings: [],
+      price: 0,
       currentStep: 1,
-      cakes: [
-        {
-          id: 1,
-          name: "birthday",
-          price: "1.99",
-          image: require("@/assets/img/pasteles/birthday.svg"),
-        },
-        {
-          id: 2,
-          name: "carrot",
-          price: "2.99",
-          image: require("@/assets/img/pasteles/carrot.svg"),
-        },
-        {
-          id: 3,
-          name: "cherry",
-          price: "3.99",
-          image: require("@/assets/img/pasteles/cherry.svg"),
-        },
-        {
-          id: 4,
-          name: "chocolate",
-          price: "4.99",
-          image: require("@/assets/img/pasteles/chocolate.svg"),
-        },
-        {
-          id: 5,
-          name: "sanvalentin",
-          price: "5.99",
-          image: require("@/assets/img/pasteles/sanvalentin.svg"),
-        },
-        {
-          id: 6,
-          name: "vainilla",
-          price: "6.99",
-          image: require("@/assets/img/pasteles/vainilla.svg"),
-        },
-      ],
-      toppings: [
-        {
-          id: 1,
-          name: "Candle",
-          price: "1.99",
-          image: require("@/assets/img/decoraciones/pastel_decoration.svg"),
-        },
-        {
-          id: 2,
-          name: "Cherries",
-          price: "2.99",
-          image: require("@/assets/img/decoraciones/pastel_decoration1.svg"),
-        },
-        {
-          id: 3,
-          name: "Fruits",
-          price: "3.99",
-          image: require("@/assets/img/decoraciones/pastel_decoration2.svg"),
-        },
-        {
-          id: 4,
-          name: "Fresh Fruits",
-          price: "4.99",
-          image: require("@/assets/img/decoraciones/pastel_decoration3.svg"),
-        },
-      ],
     };
   },
-  computed: {},
+  computed: {
+    cakes() {
+      return this.$store.getters.getactiveflavors;
+    },
+    toppings() {
+      return this.$store.getters.getactivetoppings;
+    },
+  },
   methods: {
     cakePrice(price) {
       return "$" + price;
@@ -241,6 +192,52 @@ export default {
     changeStep(step) {
       this.currentStep = step;
     },
+    calculatePrice(){
+      this.price = 0;
+      this.selectedFlavors.forEach(flavor => {
+        this.price += flavor.price;
+      });
+      this.selectedToppings.forEach(topping => {
+        this.price += topping.price;
+      });
+    },
+    sampleFunction(clientid, clientname, message){
+
+        this.$store.dispatch('addPedido', {
+          id: this.$store.getters.getclients.length + 1,
+          selectedflavors : this.selectedFlavors,
+          selectedToppings : this.selectedToppings,
+          status : 'Pendiente',
+          price : this.price,
+          message: message,
+          clientid: clientid,
+          clientname: clientname,
+        });
+        console.log(this.$store.getters.getclients);
+    },
+    addTopping(topping) {
+      if (this.selectedToppings.includes(topping)) {
+        this.selectedToppings.splice(
+          this.selectedToppings.indexOf(topping),
+          1
+        );
+      } else {
+        this.selectedToppings.push(topping);
+      }
+      this.calculatePrice();
+    },
+    addFlavor(flavor) {
+      if (this.selectedFlavors.includes(flavor)) {
+        this.selectedFlavors.splice(
+          this.selectedFlavors.indexOf(flavor),
+          1
+        );
+      } else {
+        this.selectedFlavors.push(flavor);
+      }
+      this.calculatePrice();
+    },
+
   },
 };
 </script>

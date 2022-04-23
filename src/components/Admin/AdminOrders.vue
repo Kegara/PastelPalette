@@ -4,9 +4,9 @@
     id="stepper-cake"
     class="spacer"
   />
-  <section class="vh-85 d-flex justify-content-center pastelcolor pt-10vh ">
+  <section class="vh-85 d-flex justify-content-center pastelcolor pt-10vh">
     <div class="container table-responsive">
-      <h1>Dashboard</h1>
+      <h1>Orders</h1>
 
       <h6>Filter by</h6>
       <div class="d-flex">
@@ -47,47 +47,48 @@
           </option>
         </select>
       </div>
-      <tables
-        :data="getClients"
+      <stock-table  
+        :data="getpedidos"
         :columns="columns"
-        :filter-key="filterKey"
+        :filter-key="filterKey" 
       />
     </div>
   </section>
 </template>
 
 <script>
-import Tables from '../common/Tables.vue'
-import PageHeader from '../common/PageHeader.vue'
+import PageHeader from "../common/PageHeader.vue";
+import StockTable from "../common/StockTable.vue";
 export default {
-  components: { Tables,PageHeader },
-  data(){
-      return {
-          propitems: [
-              {
-                  title: "Stock",
-                  link: "Stock" 
-              },
+  components: {  StockTable,PageHeader },
+  data() {
+    return {
+      propitems: [
+        {
+          title: "Stock",
+          link: "Stock",
+        },
         {
           title: "Orders",
           link: "Orders",
         }
-          ],
-          columns: ['id', 'name', 'phone', 'email']
-  }
-},
-computed:{
-    getClients(){
-        return this.$store.getters.getclients
+
+      ],
+      columns: [ "id","selectedflavors", "selectedToppings","message","status"
+      ,"price","clientname"],
+    };
+  },
+  computed:{
+    getpedidos(){
+        return this.$store.getters.getpedidos
     }
 }
-
-}
+};
 </script>
 
 <style>
- .vh-85 {
-            height: 100%;
-            min-height: 85vh;
-        }
+.vh-85 {
+  height: 100%;
+  min-height: 85vh;
+}
 </style>

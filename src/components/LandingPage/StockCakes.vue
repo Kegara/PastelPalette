@@ -39,7 +39,7 @@
         class="swiper mySwiper"
       >
         <swiper-slide
-          v-for="(slide, index) in slides"
+          v-for="(slide, index) in stockcakes"
           :key="index"
         >
           <div class="row">
@@ -123,68 +123,14 @@ export default {
   },
   data() {
     return {
-      slides: {
-        0: {
-          img: require("@/assets/img/pasteles/vainilla.svg"),
-          title: "Avellana",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ullam iusto incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium eveniet illo fugit nesciunt, fuga quaerat rem aliquam architecto. Iusto!",
-          button: "I want this!",
-          table: {
-            0: {
-              shape: "Barra",
-              measures: "12 x 30",
-              persons: "14",
-            },
-            1: {
-              shape: "Redonda pequeña",
-              measures: "22 (diametro)",
-              persons: "20",
-            },
-            2: {
-              shape: "Barra",
-              measures: "12 x 30",
-              persons: "14",
-            },
-            3: {
-              shape: "Redonda pequeña",
-              measures: "22 (diametro)",
-              persons: "20",
-            },
-          },
-        },
-        1: {
-          img: require("@/assets/img/pasteles/chocolate.svg"),
-          title: "Avellana",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ullam iusto incidunt debitis excepturi repellat consequuntur nisi velit, deserunt accusantium eveniet illo fugit nesciunt, fuga quaerat rem aliquam architecto. Iusto!",
-          button: "I want this!",
-          table: {
-            0: {
-              shape: "Barra",
-              measures: "12 x 30",
-              persons: "14",
-            },
-            1: {
-              shape: "Redonda pequeña",
-              measures: "22 (diametro)",
-              persons: "20",
-            },
-            2: {
-              shape: "Barra",
-              measures: "12 x 30",
-              persons: "14",
-            },
-            3: {
-              shape: "Redonda pequeña",
-              measures: "22 (diametro)",
-              persons: "20",
-            },
-          },
-        },
-      },
+     
     };
   },
+  computed:{
+    stockcakes(){
+      return  this.$store.getters.getstockcakes;
+    }
+  }
 };
 </script>
 

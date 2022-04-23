@@ -1,6 +1,6 @@
 <template>
-  <div class="header d-flex justify-content-center mb-4 f">
-    <header 
+  <div class="nav d-flex justify-content-center mb-4 f">
+    <nav 
       id="nav" 
       class=""
     >
@@ -14,14 +14,30 @@
         >
           <li>{{ item.title }}</li>
         </router-link>
+       
+        <router-link
+          v-for="(item, index) in propitems"
+          :key="index"
+          :to="{name:item.link}"
+          :hash="item.hash"
+          class="px-2 mx-1"
+        >
+          <li>{{ item.title }}</li>
+        </router-link>
       </ul>
-    </header>
+    </nav>
   </div>
 </template>
 
 <script>
 export default {
   name: "Pageheader",
+  props: {
+    // eslint-disable-next-line vue/require-default-prop
+    propitems: {
+      type: Array
+    }
+  },
   data() {
     return {
       items: [
@@ -35,7 +51,7 @@ export default {
 </script>
 
 <style>
-.header {
+.nav {
   min-height: 5vh;
   width: 100%;
   position: fixed;
